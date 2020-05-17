@@ -1,0 +1,10 @@
+<script src="https://unpkg.com/vue@2.5.17"></script>
+<script src="js/const.js" charset="UTF-8" defer></script>
+<script src="js/kmt_kata_list2.js" charset="UTF-8" defer></script>
+
+<div id="app">
+  {{ kataNameFull }}
+  <kokyu-info v-bind:kokyu-name="mizu" v-on:testevent="aaa()"></kokyu-info>
+  <!-- テンプレート側でケバブケースで記述しないと、エラーは出ない（ワーニングは出る）が、期待通りの挙動をしないみたいです。 -->
+  <kokyu-info v-bind:kokyu-name="kaze"></kokyu-info>
+</div>

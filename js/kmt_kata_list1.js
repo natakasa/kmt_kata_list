@@ -46,7 +46,7 @@ const kataList = [
 
 
   var vm = new Vue({
-    el: '#app',
+    el: '.app',
     data: {
         kataList: kataList,
         kokyuName:"",

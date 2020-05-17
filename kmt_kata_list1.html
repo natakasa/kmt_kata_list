@@ -1,7 +1,7 @@
 <script src="https://unpkg.com/vue@2.5.17"></script>
-<script src="js/kmt_kata_list.js" defer></script>
+<script src="js/kmt_kata_list1.js" defer></script>
 
-<div id="app">
+<div class="app">
   <span v-for="kata in kataList" v-bind:key="kata.kokyuName">
     {{ kata.kokyuName }}<input type="radio" name="kokyu" v-bind:value="kata.kokyuName" v-on:input="kokyuName = kata.kokyuName">
   </span>
