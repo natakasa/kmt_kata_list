@@ -7,7 +7,7 @@ Vue.component('kokyu-info',{
   template : '\
 <div>{{ kokyuName }}の呼吸<br>\
   <span v-for="kataName in kataNameList" v-bind:key="kataName">\
-    <span v-on:click="changeParentKataNameFull()">{{ kataName }}</span>\
+    <span v-on:click="changeParentKataNameFull(kataName)">{{ kataName }}</span>\
   </span>\
 </div>',
   data : function(){
@@ -19,12 +19,13 @@ Vue.component('kokyu-info',{
       }
     }
     return {
-      kataNameList : kataNameList
+      kataNameList : kataNameList,
+
     }
   },
   methods:{
-    changeParentKataNameFull : function() {
-      this.$emit('testevent')
+    changeParentKataNameFull : function(kataName) {
+      this.$emit('testevent', kataName)
     }
   }
 })
@@ -37,8 +38,8 @@ new Vue({
     kaze : KAZE
   },
   methods : {
-    aaa : function() {
-      this.kataNameFull = "aaa"
+    aaa : function(event) {
+      this.kataNameFull = event
     }
   }
 })

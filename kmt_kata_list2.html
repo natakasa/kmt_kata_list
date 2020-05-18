@@ -4,7 +4,7 @@
 
 <div id="app">
   {{ kataNameFull }}
-  <kokyu-info v-bind:kokyu-name="mizu" v-on:testevent="aaa()"></kokyu-info>
+  <kokyu-info v-bind:kokyu-name="mizu" v-on:testevent="aaa($event)"></kokyu-info>
   <!-- テンプレート側でケバブケースで記述しないと、エラーは出ない（ワーニングは出る）が、期待通りの挙動をしないみたいです。 -->
-  <kokyu-info v-bind:kokyu-name="kaze"></kokyu-info>
+  <kokyu-info v-bind:kokyu-name="kaze" v-on:testevent="aaa($event)"></kokyu-info>
 </div>
