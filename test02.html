@@ -1,0 +1,12 @@
+<script src="https://unpkg.com/vue@2.6.11"></script>
+<script src="js/test02.js" charset="UTF-8" defer></script>
+<div id="app1"><span v-on:mouseover=mouseover() v-on:mouseleave=mouseleave>八百屋</span>{{message}}
+<br>
+<br>
+</div>
+    <div id="app2"><div v-for="vege in vegeList" v-bind:key="vege.name">
+        {{vege.name}}<input type="number" min=0 v-bind:valu="vege.num" v-on:input="vege.num=$event.target.value"/>
+    </div>
+    「お会計は{{totalPrice | threeDigitComma}}円です。」<br>
+    <div v-show=isNextDiscount>「{{discountCondition | threeDigitComma}}円以上なので、次回使える割引券を差し上げます。」</div>
+</div>

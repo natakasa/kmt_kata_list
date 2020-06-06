@@ -43,7 +43,7 @@ const kataList = [
       kataName:["蛇紋岩・双極","天面砕き","岩軀の膚","流紋岩・速征","瓦輪刑部"]
     }
   ]
-
+// aaa
 
   var vm = new Vue({
     el: '.app',
