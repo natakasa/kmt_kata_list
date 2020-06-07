@@ -1,9 +1,9 @@
 var vm1 = new Vue({
     el: '#app1', // id=app1の要素にマウントする。
     data:{
-        message : "",
-        messageOver : "「いらっしゃいませ！」",
-        messageLeave : ""
+        message : "「いらっしゃいませ！」",
+        messageOver : "「当店では新鮮なお野菜を用意しております！」",
+        messageLeave : "「いらっしゃいませ！」"
     },
     methods:{
         mouseover :  function(){
@@ -15,6 +15,32 @@ var vm1 = new Vue({
     }
 })
 
+/*
+
+var vm2 = new Vue({
+    el: '#app2', // id=app2の要素にマウントする。
+    data:{
+        vege : {name:"にんじん", price:100, num:0},
+        discountCondition : 1000
+    },
+    computed:{ // 
+        totalPrice :  function(){
+            return this.vege.price * this.vege.num
+        },
+        isNextDiscount :  function(){
+            return this.totalPrice >= this.discountCondition
+        }
+    },
+    filters:{
+        threeDigitComma : function(value){
+            return value.toLocaleString()
+        }
+    }
+})
+*/
+
+
+
 var vm2 = new Vue({
     el: '#app2', // id=app2の要素にマウントする。
     data:{
@@ -25,7 +51,7 @@ var vm2 = new Vue({
         ],
         discountCondition : 1000
     },
-    computed:{
+    computed:{ // 
         totalPrice :  function(){
             return this.vegeList.reduce(
                 function(sum, vege){
