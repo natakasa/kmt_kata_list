@@ -4,15 +4,23 @@
 <br>
 <!--
 <div id="app2">
-    {{vege.name}}{{vege.price}}円<input type="number" min=0 v-bind:valu="vege.num" v-on:input="vege.num=$event.target.value"/>個
+    {{vege.name}}{{vege.price}}円<input type="number" min=0 v-bind:value="vege.num" v-on:input="vege.num=$event.target.value"/>個
     <br>
     「お会計は{{totalPrice | threeDigitComma}}円です。」<br>
     <div v-show=isNextDiscount>「{{discountCondition | threeDigitComma}}円以上なので、次回使える割引券を差し上げます。」</div>
 </div>
 -->
-
+<!--
 <div id="app2"><div v-for="vege in vegeList" v-bind:key="vege.name">
-    {{vege.name}}{{vege.price}}円<input type="number" min=0 v-bind:valu="vege.num" v-on:input="vege.num=$event.target.value"/>個
+    {{vege.name}}{{vege.price}}円<input type="number" min=0 v-bind:value="vege.num" v-on:input="vege.num=$event.target.value"/>個
+    </div>
+    <br>
+    「お会計は{{totalPrice | threeDigitComma}}円です。」<br>
+    <div v-show=isNextDiscount>「{{discountCondition | threeDigitComma}}円以上なので、次回使える割引券を差し上げます。」</div>
+</div>
+-->
+<div id="app2"><div v-for="vege in vegeList" v-bind:key="vege.name">
+    {{vege.name}}{{vege.price}}円<input type="number" min=0 v-model="vege.num"/>個
     </div>
     <br>
     「お会計は{{totalPrice | threeDigitComma}}円です。」<br>
